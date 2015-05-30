@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebTechnologyHomeworkBlog.Models.Comment>
+
+@{
+    ViewBag.Title = "Comments";
+}
+
+
+<table class="table" border="1" width="100" bordercolor="#800000" bgcolor="#C9DACF" align="center">
+
+    <caption><font size=5 face=verdana><b>COMMENTS</b></font></caption>
+    <tr>
+       <td bgcolor="#800000" width="20%" align="center"><font  color="#FFFFFF"  face="Arial">Article Name</font></td>
+		<td bgcolor="#800000" width="20%" align="center"><font  color="#FFFFFF"  face="Arial">Content</font></td>
+		
+	</tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.articleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+
+            </tr>
+        }
+
+    </table>

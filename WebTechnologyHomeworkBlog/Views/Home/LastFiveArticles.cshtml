@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "LastFiveArticles";
+}
+
+@{
+    //En dışa bir çerçeve attık. İçeriği ortaladık ve 25'er piksel boşluk verdik.
+    <div style="border:0px solid black;padding:25px;text-align:center; background:#FFFFCC">
+        <h2>At the following articles, I wrote the last five articles </h2>
+        <!--
+        //Burada Model dediğimiz zaman, Controllerden gelen veriye direkt ulaşmaktayız.
+        //Biz burada liste halinde gelen Model'imizde döngü kurarak, içindeki verileri
+        //html olarak basacağız.
+            -->
+        @foreach (var item in Model)
+        {
+            //Burada her makalenin etrafına çerçeve attık
+            <div style="border:1px solid red">
+                <h3>@item.ArticleName</h3>
+                <p>@item.ArticleContent</p>
+                <strong>Date : @item.ReleaseDate </strong>
+            </div>
+        }
+    </div>
+}
+<hr color=#800000>
+<p align="center">@Html.ActionLink("To go to Main Page please click", "Index", "FirstPage")</p>
+
+

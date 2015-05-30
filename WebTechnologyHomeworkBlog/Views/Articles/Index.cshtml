@@ -1,0 +1,315 @@
+﻿@model IEnumerable<WebTechnologyHomeworkBlog.Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleGenre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </th>
+       
+        <th>
+            Upload An Image
+           
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleGenre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorName)
+        </td>
+       
+        <td>
+            @if (item.ArticleID == 1)
+            {
+                ViewBag.id=item.ArticleID;
+               
+                using (Html.BeginForm("Index", "Articles", FormMethod.Post,
+                                new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image/*" multiple="multiple" />
+                <br />   
+                <input type="submit" value="Please upload only .jpeg format" />
+                <br />    <br />    <br />   
+
+                }
+                foreach (var imgPath in Directory.GetFiles(Server.MapPath("~/image"), "*.jpg"))
+                {
+                    var img = new FileInfo(imgPath);
+
+                    <img src="@Url.Content(String.Format("~/image/{0}", img.Name))" width="100" height="100" />
+
+                }
+            }
+            @if (item.ArticleID == 2)
+                
+            {
+             
+                using (Html.BeginForm("Index1", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image1/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image1"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image1/{0}", img1.Name))" width="100" height="100" />
+
+                }}
+            @if (item.ArticleID == 3)
+            {
+
+                using (Html.BeginForm("Index2", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image2/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image2"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image2/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+            
+            @if (item.ArticleID == 14)
+            {
+
+                using (Html.BeginForm("Index3", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image3/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image3"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image3/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+
+
+            @if (item.ArticleID == 15)
+            {
+
+                using (Html.BeginForm("Index4", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image4/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image4"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image4/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+            @if (item.ArticleID == 16)
+            {
+
+                using (Html.BeginForm("Index5", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image5/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image5"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image5/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+            @if (item.ArticleID == 17)
+            {
+
+                using (Html.BeginForm("Index6", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image6/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image6"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image6/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+            @if (item.ArticleID == 18)
+            {
+
+                using (Html.BeginForm("Index7", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image7/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image7"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image7/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+            @if (item.ArticleID == 19)
+            {
+
+                using (Html.BeginForm("Index8", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image8/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image8"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image8/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+            @if (item.ArticleID == 20)
+            {
+
+                using (Html.BeginForm("Index9", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image9/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image9"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image9/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+            @if (item.ArticleID == 21)
+            {
+
+                using (Html.BeginForm("Index10", "Articles", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" id="images" name="images" accept="image10/*" multiple="multiple" />
+    <br />
+    <input type="submit" value="Please upload only .jpeg format" />
+    <br />    <br />    <br />
+
+                }
+                foreach (var imgPath1 in Directory.GetFiles(Server.MapPath("~/image10"), "*.jpg"))
+                {
+                    var img1 = new FileInfo(imgPath1);
+
+                    <img src="@Url.Content(String.Format("~/image10/{0}", img1.Name))" width="100" height="100" />
+
+                }
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArticleID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ArticleID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArticleID })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="pagination">
+
+    Page:
+    @for (int p = 1; p <= ViewBag.TotalPages; p++)
+    {
+        <a class="@(p==ViewBag.CurrentPage ? "current" : "")"
+           href="@Url.Action("Index","Articles",new{page=p})">@p</a>
+    }
+
+
+</div>
+<style type="text/css">
+    a {
+        color: blue;
+    }
+</style>
+
+
+
+
